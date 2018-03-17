@@ -5,11 +5,17 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# https://github.com/MrPowers/frontend-generators
+gem 'frontend-generators'
+
 # Mongoid gem
 gem 'mongoid', '~> 6.2.1'
 
 # Devise authentication gem
 gem 'devise'
+
+# Jquery
+gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
