@@ -9,6 +9,13 @@ class User
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
 
+  # User core data
+  field :first_name,         type: String
+  field :last_name,          type: String
+  field :phone_number,       type: String
+  field :address,            type: String
+  has_many :dashboards
+
   ## Recoverable
   field :reset_password_token,   type: String
   field :reset_password_sent_at, type: Time
