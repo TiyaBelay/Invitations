@@ -12,9 +12,9 @@ class User
   # User core data
   field :first_name,         type: String
   field :last_name,          type: String
-  field :phone_number,       type: String
-  field :address,            type: String
-  has_many :dashboards
+  # field :phone_number,       type: String
+  # field :address,            type: String
+  # has_many :dashboards
 
   ## Recoverable
   field :reset_password_token,   type: String
@@ -31,13 +31,13 @@ class User
   field :last_sign_in_ip,    type: String
 
   ## Confirmable
-  # field :confirmation_token,   type: String
-  # field :confirmed_at,         type: Time
-  # field :confirmation_sent_at, type: Time
-  # field :unconfirmed_email,    type: String # Only if using reconfirmable
+  field :confirmation_token,   type: String
+  field :confirmed_at,         type: Time
+  field :confirmation_sent_at, type: Time
+  field :unconfirmed_email,    type: String # Only if using reconfirmable
 
   ## Lockable
-  # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
-  # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
-  # field :locked_at,       type: Time
+  field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
+  field :unlock_token,    type: String # Only if unlock strategy is :email or :both
+  field :locked_at,       type: Time
 end
