@@ -8,6 +8,9 @@ end
 # Mongoid gem
 gem 'mongoid', '~> 6.2.1'
 
+# Devise authentication gem
+gem 'devise'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
 # Use Puma as the app server
