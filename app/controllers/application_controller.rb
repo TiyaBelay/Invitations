@@ -8,4 +8,9 @@ class ApplicationController < ActionController::Base
   #   # permit user to create an address on sign_up (if needed in the future)
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:phone_number, :address])
   # end
+
+  # devise helper to redirect after sign up
+  def after_sign_in_path_for(resource)
+    new_dashboard_path
+  end
 end

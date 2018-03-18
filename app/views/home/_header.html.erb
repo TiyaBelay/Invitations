@@ -1,24 +1,12 @@
 <header id="top" class="header">
     <div class="text-vertical-center">
       <ul>
-        <% if user_signed_in? %>
-            <li>
-              <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => "btn btn-dark navbar-btn" %>
-            </li>
-            <li>
-              <%= current_user.email %>
-            </li>
-            <li>
-              <%= link_to "Edit Account Settings", edit_user_registration_path, :class => "btn btn-dark navbar-btn" %>
-            </li>
-        <% else %>
-            <div>
-              <%= link_to "Sign In", new_user_session_path, :class => "btn btn-dark navbar-btn"%>
-            </div>
-            <div>
-              <%= link_to "Register", new_user_registration_path, :class => "btn btn-dark navbar-btn" %>
-            </div>
-        <% end %>
+        <div>
+          <%= link_to "Sign In", new_user_session_path, :class => "btn btn-dark navbar-btn"%>
+        </div>
+        <div>
+          <%= link_to "Register", new_user_registration_path, :class => "btn btn-dark navbar-btn" %>
+        </div>
       </ul>
     </div>
 </header>
