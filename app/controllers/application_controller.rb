@@ -1,7 +1,8 @@
+# Devise application controller replaces user controller
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-    # # Anytime a user is updated/changed, sanitize the devise parameters
+  # # Anytime a user is updated/changed, sanitize the devise parameters
   # before_action :sanitize_devise_parameters, if: :devise_controller?
   #
   # def sanitize_devise_parameters
@@ -10,7 +11,7 @@ class ApplicationController < ActionController::Base
   # end
 
   # devise helper to redirect after sign up
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(_resource)
     new_dashboard_path
   end
 end

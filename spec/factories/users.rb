@@ -1,7 +1,8 @@
 FactoryBot.define do
+  sequence(:email) { |n| "testing#{n}@example.com" }
 
   factory :user do
-    email "testing@test.com"
-    password "bleepblop"
+    email
+    password 'bleepblop'
   end
 end

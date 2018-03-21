@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe User do
-
   # Setting up the base user
   # before(:all) do
   #   @base_user = create(:user)
