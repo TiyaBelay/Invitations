@@ -1,3 +1,3 @@
-class Dashboard
+class Event
   include Mongoid::Document
 end
