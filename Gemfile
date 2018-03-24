@@ -5,9 +5,12 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# source: https://github.com/bootstrap-ruby/bootstrap_form
+gem 'bootstrap_form'
+
 gem 'rubocop', require: false
 
-# https://github.com/MrPowers/frontend-generators
+# source: https://github.com/MrPowers/frontend-generators
 gem 'frontend-generators'
 
 # Mongoid gem

@@ -29,42 +29,32 @@
     </div>
   </header>
 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createEventModal">Create Event</button>
-  <div class="modal fade" id="createEventModal" role="dialog" aria-labelledby="createEventModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="createEventModalLabel">Start building your Event</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form class="form">
-            <div class="form-group">
-              <label class="radio-inline"><input type="radio" name="eventtype">Wedding</label>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control-inline" placeholder="Spouse #1 First name">
-              <input type="text" class="form-control-inline" placeholder="Spouse #1 Last name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control-inline" placeholder="Spouse #2 First name">
-              <input type="text" class="form-control-inline" placeholder="Spouse #2 Last name">
-            </div>
-            <div class="form-group">
-              <label> Your Wedding day: </label><input type="date" name="bday">
-            </div>
-          </form>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Submit</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+  <div>
+    <%=bootstrap_form_for @event do |f| %>
+      <div>
+        <%= f.form_group :event_type, label: { text: 'Event Type' } do %>
+          <%= f.radio_button :event_type, 'wedding', label: 'Wedding' %>
+          <%= f.radio_button :event_type, 'other', label: 'Other' %>
+        <% end %>
       </div>
-    </div>
+      <div>
+        <%= f.text_field :partner1_first_name, label: 'Partner 1 First Name'  %>
+        <%= f.text_field :partner1_last_name, label: 'Partner 1 Last Name' %>
+      </div>
+
+      <div>
+        <%= f.text_field :partner2_first_name, label: 'Partner 2 First Name' %>
+        <%= f.text_field :partner2_last_name, label: 'Partner 2 Last Name' %>
+      </div>
+
+      <div>
+        <%= f.date_field :due_date, label: 'Due Date' %>
+      </div>
+
+      <div>
+        <%= f.submit 'Submit', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
   </div>
-</div>
 </body>
 </html>
-
-

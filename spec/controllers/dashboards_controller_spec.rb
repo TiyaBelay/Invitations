@@ -1,14 +1,13 @@
 require 'rails_helper'
-require 'pry'
 
 describe DashboardsController do
   describe '#create' do
     context 'when user is signed in' do
-      let(:dashboard) { Dashboard.desc(:updated_at).first }
+      let(:event) { post :create, params: { event_name: 'GrumpyCat Graduation Party', event_type: 'graduation' } }
 
-      it 'can create an event' do
-        post :create, params: FactoryBot.attributes_for(:event)
-        expect(dashboard).to include(event_name: 'T & T Wedding')
+      it 'can create an event and stay on the same page' do
+        expect { event }.to change{ Event.count }.by(1)
+        expect(response).to redirect_to new_dashboard_path(event)
       end
     end
   end
