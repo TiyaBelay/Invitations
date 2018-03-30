@@ -1,7 +1,6 @@
 # Managing Dashboards through the Dashboard controller
 class DashboardsController < ApplicationController
   def new
-    @event = Event.new
-  end
 
+  end
 end

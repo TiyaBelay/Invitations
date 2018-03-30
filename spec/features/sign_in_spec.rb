@@ -11,6 +11,7 @@ feature 'Sign In' do
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_button 'Log in'
+    expect(page).to have_content 'Welcome to your Dashboard'
   end
 
   scenario 'realizes they did not sign up' do

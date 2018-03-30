@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   end
 
   def create
+    params[:event]
     @event = Event.new(event_params)
     @event.save
     redirect_to new_dashboard_path
@@ -13,7 +14,12 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.fetch(:event, {}).permit(:event_name, :event_type, :partner1_first_name, :partner1_last_name,
-                                  :partner2_first_name, :partner2_last_name, :due_date)
+    params.require(:event).permit(:event_name,
+                                  :event_type,
+                                  :partner1_first_name,
+                                  :partner1_last_name,
+                                  :partner2_first_name,
+                                  :partner2_last_name,
+                                  :due_date)
   end
 end

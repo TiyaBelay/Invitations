@@ -6,9 +6,34 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar navbar-default">
+      <div>
+        <a class="navbar-brand">Welcome to your Dashboard</a>
+      </div>
+
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+              <li><%= link_to 'My Account', edit_user_registration_path, :class => 'btn btn-dark navbar-btn' %></li>
+              <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :class => 'btn btn-dark navbar-btn' %></li>
+          <% else %>
+              <li><%= link_to 'Sign In', new_user_session_path, :class => 'btn btn-dark navbar-btn' %></li>
+              <li><%= link_to 'Register', new_user_registration_path, :class => 'btn btn-dark navbar-btn' %></li>
+          <% end %>
+        </ul>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 text-center">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

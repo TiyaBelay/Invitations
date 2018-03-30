@@ -85,6 +85,8 @@ GEM
       factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
     ffi (1.9.23)
+    font-awesome-rails (4.7.0.3)
+      railties (>= 3.2, < 5.2)
     frontend-generators (0.2.0)
       rainbow (= 2.0.0)
       turf (= 0.0.5)
@@ -258,6 +260,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   factory_bot_rails
+  font-awesome-rails
   frontend-generators
   jbuilder (~> 2.5)
   jquery-rails

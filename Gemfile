@@ -19,6 +19,8 @@ gem 'mongoid', '~> 6.2.1'
 # Devise authentication gem
 gem 'devise'
 
+# Font Awesome
+gem 'font-awesome-rails'
 # Jquery
 gem 'jquery-rails'
 
@@ -61,8 +63,8 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'web-console', '>= 3.3.0'
   gem 'pry-rails'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring
   gem 'spring'
