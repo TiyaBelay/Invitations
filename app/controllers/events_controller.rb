@@ -1,4 +1,13 @@
 class EventsController < ApplicationController
+
+  def show
+
+  end
+
+  def index
+    User.events
+  end
+
   def new
     @event = Event.new
     render partial: 'event_form'
@@ -8,7 +17,7 @@ class EventsController < ApplicationController
     params[:event]
     @event = Event.new(event_params)
     @event.save
-    redirect_to new_dashboard_path
+    redirect_to new_event_path
   end
 
   private

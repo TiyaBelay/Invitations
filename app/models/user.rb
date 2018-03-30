@@ -15,7 +15,7 @@ class User
   field :last_name,          type: String
   # field :phone_number,       type: String
   # field :address,            type: String
-  has_many :dashboards
+  has_many :events
 
   ## Recoverable
   field :reset_password_token,   type: String

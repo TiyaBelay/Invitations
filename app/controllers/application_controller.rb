@@ -12,6 +12,6 @@ class ApplicationController < ActionController::Base
 
   # devise helper to redirect after sign up
   def after_sign_in_path_for(_resource)
-    new_dashboard_path
+    event_path(:id)
   end
 end

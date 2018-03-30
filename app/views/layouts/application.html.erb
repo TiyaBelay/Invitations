@@ -4,30 +4,30 @@
     <title>Invitation</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'stylish_portfolio/manifest.css', media: 'all' %>
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <%= javascript_include_tag 'stylish_portfolio/manifest.js' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
   <body>
-    <header class="navbar navbar-default">
-      <div>
-        <a class="navbar-brand">Welcome to your Dashboard</a>
+    <container>
+      <div class="navbar navbar-default">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+                <a class="navbar-brand">Welcome to your Dashboard</a>
+                <li><%= link_to 'My Account', edit_user_registration_path, :class => 'btn btn-dark navbar-btn' %></li>
+                <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :class => 'btn btn-dark navbar-btn' %></li>
+            <% else %>
+                <li><%= link_to 'Sign In', new_user_session_path, :class => 'btn btn-dark navbar-btn' %></li>
+                <li><%= link_to 'Register', new_user_registration_path, :class => 'btn btn-dark navbar-btn' %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
-
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-              <li><%= link_to 'My Account', edit_user_registration_path, :class => 'btn btn-dark navbar-btn' %></li>
-              <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete, :class => 'btn btn-dark navbar-btn' %></li>
-          <% else %>
-              <li><%= link_to 'Sign In', new_user_session_path, :class => 'btn btn-dark navbar-btn' %></li>
-              <li><%= link_to 'Register', new_user_registration_path, :class => 'btn btn-dark navbar-btn' %></li>
-          <% end %>
-        </ul>
-      </div>
-    </header>
+    </container>
     <div class="container">
       <div class="row">
         <div class="col-lg-10 col-lg-offset-1 text-center">
